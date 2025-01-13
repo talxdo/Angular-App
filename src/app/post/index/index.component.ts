@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 
 import { Post } from '../post';
 import { PostService } from '../post.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-index',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './index.component.html',
   styleUrl: './index.component.scss'
 })
