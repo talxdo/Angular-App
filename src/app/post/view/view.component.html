@@ -1,1 +1,21 @@
-<p>view works!</p>
+<div class="container">
+    <h1>Detalles Post</h1>
+
+    <a routerLink="/post/index" class="btn btn-primary">Atrás</a>
+
+    <div>
+        <strong>ID: </strong>
+        <p>{{ post()?.id}}</p>
+    </div>
+
+    <div>
+        <strong>Título: </strong>
+        <p>{{ post()?.title}}</p>
+    </div>
+
+    <div>
+        <strong>Contenido: </strong>
+        <p>{{ post()?.body}}</p>
+    </div>
+
+</div>

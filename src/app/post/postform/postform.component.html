@@ -1,9 +1,9 @@
-<!-- <div class="container">
-    <h1>Modificar post</h1>
+<div class="container">
+    <h1>{{ title() }}</h1>
   
     <a routerLink="/post/index" class="btn btn-primary">Atrás</a>
   
-    <form [formGroup]="form" (ngSubmit)="sumbit()">
+    <form [formGroup]="postform()" (ngSubmit)="submit()">
       <div class="form-group">
         <label for="title">Título</label>
         <input
@@ -39,10 +39,8 @@
         }
       </div>
   
-      <button class="btn btn-success" type="submit" [disabled]="form.invalid">
-        Crear
+      <button class="btn btn-success" type="submit" [disabled]="postform().invalid">
+        Guardar
       </button>
     </form>
-  </div> -->
-  
-<app-postform [title]="'Modificar Post'" [post]="post()" />
+  </div>

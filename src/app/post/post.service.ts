@@ -32,11 +32,11 @@ export class PostService {
       this.httpOptions)
   }
 
-  find(id : number) :  Observable <any>{
+  find(id : string) :  Observable <any>{
     return this.http.get(this.apiURL + '/posts/' + id)
   }
 
-  update(id: number, post : Post): Observable<any>{
+  update(id: string, post : Post): Observable<any>{
     return this.http.put(
       this.apiURL + '/posts/' + id,
       JSON.stringify(post),
@@ -44,7 +44,7 @@ export class PostService {
     )
   }
 
-  delete(id: number){
+  delete(id: string | undefined){
     return this.http.delete(
       this.apiURL + '/posts/' + id,
       this.httpOptions

@@ -1,28 +1,34 @@
 <div class="container">
-    <h1>Angular 18 CRUD</h1>
-    <a href="" routerLink="/post/create" class="btn btn-primary">Crear post</a>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Contenido</th>
-                <th width="250px">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (post of posts; track $index) {
-            <tr>       
-                <td>{{ post.id }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.body }}</td>
-                <td>
-                    <a [routerLink]="['/posts/', post.id, 'view']" class="btn btn-info">Detalles</a>
-                    <a [routerLink]="['/posts/', post.id, 'edit']" class="btn btn-primary">Editar</a>
-                    <a type="button" (click)="deletePost(post.id)" class="btn btn-danger">Eliminar</a>
-                </td>
-            </tr>
-                }
-        </tbody>
-    </table>
+  <h1>Angular 18 CRUD</h1>
+  <a href="" routerLink="/post/create" class="btn btn-primary">Crear post</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th width="250px">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (post of posts; track $index) {
+      <tr>
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+        <td>
+          <a [routerLink]="['/post/', post.id, 'view']" class="btn btn-info"
+            >Detalles</a
+          >
+          <a [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary"
+            >Editar</a
+          >
+          <a type="button" (click)="deletePost(post.id)" class="btn btn-danger"
+            >Eliminar</a
+          >
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
 </div>
