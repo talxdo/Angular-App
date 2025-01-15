@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { IndexComponent } from './post/index/index.component';
+import { postResolver } from './post/post.resolver';
 
 
 export const routes: Routes = [
@@ -19,6 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'post/:idPost/view',
+    resolve: {post : postResolver},
     loadComponent: () =>
       import('./post/view/view.component').then((c) => c.ViewComponent),
   },

@@ -8,34 +8,35 @@ import {
 } from '@angular/forms';
 
 import { PostService } from '../post.service';
+import { PostformComponent } from '../postform/postform.component';
 @Component({
   selector: 'app-create',
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, PostformComponent],
   templateUrl: './create.component.html',
   styleUrl: './create.component.scss',
 })
 export class CreateComponent {
-  public postservice = inject(PostService);
-  private router = inject(Router);
+  // public postservice = inject(PostService);
+  // private router = inject(Router);
 
-  form!: FormGroup;
+  // form!: FormGroup;
 
-  ngOnInit(): void {
-    this.form = new FormGroup({
-      title: new FormControl('', [Validators.required]),
-      body: new FormControl('', [Validators.required]),
-    });
-  }
+  // ngOnInit(): void {
+  //   this.form = new FormGroup({
+  //     title: new FormControl('', [Validators.required]),
+  //     body: new FormControl('', [Validators.required]),
+  //   });
+  // }
 
-  sumbit() {
-    console.log(this.form.value);
-    this.postservice.create(this.form.value).subscribe(() => {
-      console.log('Post creado correctamente');
-      this.router.navigateByUrl('post/index');
-    });
-  }
+  // sumbit() {
+  //   console.log(this.form.value);
+  //   this.postservice.create(this.form.value).subscribe(() => {
+  //     console.log('Post creado correctamente');
+  //     this.router.navigateByUrl('post/index');
+  //   });
+  // }
 
-  get f() {
-    return this.form.controls;
-  }
+  // get f() {
+  //   return this.form.controls;
+  // }
 }

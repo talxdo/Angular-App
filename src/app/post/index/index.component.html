@@ -17,10 +17,10 @@
         <td>{{ post.title }}</td>
         <td>{{ post.body }}</td>
         <td>
-          <a [routerLink]="['/posts/', post.id, '/view']" class="btn btn-info"
+          <a [routerLink]="['/post/', post.id, 'view']" class="btn btn-info"
             >Detalles</a
           >
-          <a [routerLink]="['/posts/', post.id, '/edit']" class="btn btn-primary"
+          <a [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary"
             >Editar</a
           >
           <a type="button" (click)="deletePost(post.id)" class="btn btn-danger"
