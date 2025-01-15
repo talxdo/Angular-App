@@ -26,6 +26,7 @@ export const routes: Routes = [
   },
   {
     path: 'post/:idPost/edit',
+    resolve: {post : postResolver},
     loadComponent: () =>
       import('./post/edit/edit.component').then((c) => c.EditComponent),
   },
