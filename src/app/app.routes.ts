@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
-
 import { IndexComponent } from './post/index/index.component';
-import { EditComponent } from './post/edit/edit.component';
+
 
 export const routes: Routes = [
   {
@@ -25,6 +24,7 @@ export const routes: Routes = [
   },
   {
     path: 'post/:idPost/edit',
-    component: EditComponent,
+    loadComponent: () =>
+      import('./post/edit/edit.component').then((c) => c.EditComponent),
   },
 ];

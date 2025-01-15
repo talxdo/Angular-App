@@ -1,1 +1,47 @@
-<p>edit works!</p>
+<div class="container">
+    <h1>Modificar post</h1>
+  
+    <a routerLink="/post/index" class="btn btn-primary">Atrás</a>
+  
+    <form [formGroup]="form" (ngSubmit)="sumbit()">
+      <div class="form-group">
+        <label for="title">Título</label>
+        <input
+          formControlName="title"
+          id="title"
+          class="form-control"
+          type="text"
+        />
+        @if (f['title'].touched && f['title'].invalid) {
+        <div class="alert alert-danger">
+          @if (f['title'].errors && f['title'].errors['required']) {
+          <div>Campo obligatorio</div>
+          }
+        </div>
+  
+        }
+      </div>
+      <div class="form-group">
+        <label for="body">Contenido</label>
+        <input
+          formControlName="body"
+          id="body"
+          class="form-control"
+          type="text"
+        />
+        @if (f['body'].touched && f['body'].invalid) {
+        <div class="alert alert-danger">
+          @if(f['body'].errors && f['body'].errors['required']) {
+          <div>Campo obligatorio</div>
+          }
+        </div>
+  
+        }
+      </div>
+  
+      <button class="btn btn-success" type="submit" [disabled]="form.invalid">
+        Crear
+      </button>
+    </form>
+  </div>
+  
