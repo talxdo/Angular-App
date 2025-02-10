@@ -6,10 +6,11 @@ import { Post } from '../post';
 import { PostService } from '../post.service';
 import { CommonModule } from '@angular/common';
 import { tap } from 'rxjs';
+import { LimitInputDirective } from '../limit-input.directive';
 
 @Component({
   selector: 'app-postform',
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, LimitInputDirective],
   templateUrl: './postform.component.html',
   styleUrl: './postform.component.scss'
 })
